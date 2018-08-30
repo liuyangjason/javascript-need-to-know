@@ -7,6 +7,9 @@ you must select one source code editor. there are multiples of choices. And I li
 2. [jsfiddle](https://jsfiddle.net/) : it is another version on line javascript code editor. You can use it as the replacement of jsbin.
 3. __VSCode__ : it is one of the best code editor (not on line editor). I recommend it stronly. 
 
+# Naming Convention
+I recommend using airbnb style. it is here: https://github.com/airbnb/javascript
+
 # Running Environment Setup
 If you do not use __jsbin__ or __jsfiddle__ to show result of javascript snippet , you should set up local environment.  
 
