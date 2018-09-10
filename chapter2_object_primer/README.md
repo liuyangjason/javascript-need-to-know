@@ -3,23 +3,21 @@ After learning what is JSON, let us jump into __Object__ , which is the most oft
 
 ## What is an Object
 
-see one example first
+see some examples first
 ~~~javascript
-var myFirstObject = { 
-    firstName: "Jason", 
-    age: 100,
-    myFavoriateColor: function() {
-        return ["red", "yellow"];
-    }
-};
+var foo = { name: 'Jason', sex: 'Male'};
+var foo = [ "China", "U.S.A", "New Zealand"];
+var foo = function abc() { return "Hello World"; };
 ~~~
 
 As above sample shows, the javascript object is totally matched with format of JSON.
 
 So Master JSON is the prerequisite to master javascript object.
 
-Notes: Do not worry about the __function__ key word used in the object. just ignore it. It will be described latter. 
+__function__ is also object. 
 
+
+Notes: Do not worry about the detail of __function__ key word used in the object. just ignore it. It will be described latter. So far, you only need to remember that 'function' is one special object. 
 
 ## How to create Object
 1.  __Object Literals__ : it is most common used manner
@@ -87,9 +85,52 @@ mongo.shape = "round";
 console.log(mongo.color);
 ~~~
 
-## How to access property of javascript object
-see follow example
+# Object Properties
+every object has properties. 
+~~~ javascript
+var foo = { name: 'Jason', sex: 'Male' }; // name and sex are properties of foo object
+~~~
+
+## How to access properties on an object
+~~~ javascript
+var foo = { name: 'Jason', sex: 'Male'};
+console.log(foo.name); //it is ok to use dot notation to access property
+console.log(foo[name]); //it is ok to use bracket notation to access property
+
+
+var foo = ["China", "U.S.A", "New Zealand"];
+console.log(foo[0]); // the only way to access property is to use bracket notation 
+console.log(foo[2]); // the only way to access property is to use bracket notation
+
+
+var foo = function abc() { return "Hello World"; }
+console.log(foo()); // the only way to access the variable is to use parenthesis
+~~~
+
+
+
+## What will happen if accessing a proeroty does not exist on an object
+
+~~~console
+undefined
+~~~
+
+## How to add properties to object
 ~~~javascript
-console.log(myFirstObject.firstName); // it is Dot Notation
-console.log(myFirstObject["firstName"]); // it is Bracket Notation
+var foo1 = { name : "Jason" };
+console.log(foo1.name); // Jason
+console.log(foo1.sex); // error: undefined
+foo1.sex = "Male"; //assign proeroty to foo object
+console.log(foo1.sex); // Male
+
+
+function Person(name) {
+    this.name = name;
+}
+Person.prototype.sex = null;
+
+var foo2 = new Person("Jason");
+console.log(foo2.sex); // null
+foo2.sex = "Male";
+console.log(foo2.sex); // Male
 ~~~

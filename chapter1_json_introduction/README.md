@@ -1,7 +1,7 @@
 # Why JSON
-JSON is most important data structure used in javascript. 
+JSON is the most important data structure used in javascript. 
 
-It is mandatory to master it.
+It is mandatory to master it before learning javascript
 
 # JSON Syntax
 JSON syntax format is based on two main structures: **Object** and **Array**

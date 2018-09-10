@@ -24,3 +24,11 @@ python -m SimpleHTTPServer
 
 
 After setting up your local environment, it is time to write your javascript snippet and show how it works!
+
+
+As to illustrate how the local environment works, please follow the steps to finish 'hello world'.
+~~~ console
+python -m SimpleHTTPServer
+
+access 'http://localhost:8000/helloworld.html' from browser
+~~~
