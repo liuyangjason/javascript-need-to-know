@@ -9,17 +9,17 @@ A javascript function is defined with 'function' keyword, followed by a name, fo
 var myFunction= function [name](param1[, param2[,....paramN]]){ statement }; 
 ```
 
-## function 'parameters' 
+### function 'parameters' 
 function parameters are the names listed in the parentheses.
-## function 'arguments' 
+### function 'arguments' 
 function arguments are the real values received by the function when it is invoked.
-## function expression 
+### function expression 
 function expression is a function expression is to store the function into a variable and then the variable is to be used as a function.  
 ```javascript
 var x = function(a, b) { return a*b };  
 ```
 
-## named function expression
+### named function expression
 if you want to refer to this function inside the function body, you need to use named function expression. the name is then only local to the function body.
 ```javascript
 var math = {
@@ -32,4 +32,75 @@ var math = {
 ```
 
 ``` javascript
+function myFunction(a, b) {
+  return a * b;
+}
+
+console.log(myFunction(3, 2)); // 6
+
+var funcExpression = function(a, b) {
+  return a * b;
+}
+
+console.log(funcExpression(3, 2));
+```
+### Arrow function
+```javascript
+var elements = [
+    'firstE',
+    'secondE',
+    'thirdE'
+]
+elements.map(element => console.log(element));//
+
+var func1 = x => x * x; //concise body syntax, implied 'return'
+
+var func2 = (x) => { return x * x; }; //with block body, explicit 'return' needed
+```
+if there is a single expression or statement in the function:
+1.  using round bracket in the body is optional.
+2.  using a return statement is optional.
+
+#### Returning object literals in arrow function
+```javascript
+var func = () => { foo: 1 };
+//calling func() returns undefined!
+
+var func = () => ({ foo: 1 });
+//calling func() returns object literal
+```
+## function use cases
+in the vast majority of cases, __function__ is used inside object as __method__. this is most common use case.
+~~~javascript
+var obj = {
+    foo: function() {
+        return 'bar';
+    }
+}
+console.log(obj.foo()); //bar
+~~~
+### Use Case: Constructor Function
+
+``` javascript
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+var p = new Person('Jason', 'Liu');
+console.log(p.constructor == Person); //true
+console.log(p instanceof Person); //true
+```
+
+### Use Case: Function as callback
+
+```javascript
+function callbackSample(arg1, arg2, callback) {
+    //generate a random number
+    var myRandomNumber = Math.ceil(Math.random() * (arg1 - arg2) + arg2);
+    callback(myRandomNumber);
+}
+
+callbackSample(5, 15, function(num){
+    console.log("callback called! " + num);
+});
 ```
