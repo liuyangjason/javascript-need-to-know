@@ -14,21 +14,20 @@ I recommend using airbnb style. it is here: https://github.com/airbnb/javascript
 If you do not use __jsbin__ or __jsfiddle__ to show result of javascript snippet , you should set up local environment.  
 
 I recommend python. it is built-in tool in Macbook. And it is super easy to install on Windows system.
-~~~ Python
+``` Python
 cd <directory-of-your-javascript-files>
 # if python version is above 3.X
 python -m http.server 
 # if python version is above 2.X
 python -m SimpleHTTPServer
-~~~
-
+```
 
 After setting up your local environment, it is time to write your javascript snippet and show how it works!
 
 
 As to illustrate how the local environment works, please follow the steps to finish 'hello world'.
-~~~ console
+```console
 python -m SimpleHTTPServer
 
 access 'http://localhost:8000/helloworld.html' from browser
-~~~
+```
