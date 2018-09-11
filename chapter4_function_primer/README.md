@@ -24,9 +24,9 @@ if you want to refer to this function inside the function body, you need to use 
 ```javascript
 var math = {
   'factorial': function factorial(n) {
-	if (n <= 1)
-	  return 1;
-	return n * factorial(n - 1);
+    if (n <= 1)
+      return 1;
+    return n * factorial(n - 1);
   }
 };
 ```
@@ -70,6 +70,7 @@ var func = () => ({ foo: 1 });
 //calling func() returns object literal
 ```
 ## function use cases
+### Use Case: method property of object
 in the vast majority of cases, __function__ is used inside object as __method__. this is most common use case.
 ~~~javascript
 var obj = {
@@ -92,15 +93,36 @@ console.log(p instanceof Person); //true
 ```
 
 ### Use Case: Function as callback
+calback function is also named as 'higher-order function'.
+
+Let us run one classic callback function example in basic javascript
 
 ```javascript
-function callbackSample(arg1, arg2, callback) {
-    //generate a random number
-    var myRandomNumber = Math.ceil(Math.random() * (arg1 - arg2) + arg2);
-    callback(myRandomNumber);
-}
+var friends = ['Mike', 'Tom', 'Jason', 'Fisher'];
 
-callbackSample(5, 15, function(num){
-    console.log("callback called! " + num);
+friends.forEach(function (eachName, index){
+    console.log(index + 1 + '. ' + eachName);
+});
+
+friends.forEach((eachName, index) => {
+    console.log(index + 1 + '. ' + eachName);
 });
 ```
+#### Why to use callback in javascript?
+by callback function, we can run javascript in asynchronous manner.
+
+Notes: as to closure and this related feature in callback, i will mention them in chapter on advanced function feature.
+
+### Use Case: Immediately Invoked Function Expression aka IIFE
+Let us now understand what an IIFE is and what problem does it solves
+
+As the name implies, IIFE is the function that is executed by itself.
+
+``` javascript
+(function() {
+    console.log("Hello IIFE");
+})();
+```
+#### IIFE : when to use it
+it can be used in scenarios where you need to run the function only once.
+
